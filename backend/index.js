@@ -2,6 +2,8 @@ const {insertMovieReview} = require('./queries');
 const express = require('express');
 const app = express();
 const mySql = require('mysql');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const db = mySql.createPool({
     host: 'localhost',
@@ -10,17 +12,18 @@ const db = mySql.createPool({
     database: 'density_labs_db'
 });
 
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
-app.get('/insert-movie-review', (req, res) => {
-    
-    db.query(insertMovieReview('inception', 'this is a really cool movie'),(err, results, fields) => {
+app.post('/api/insert-movie-review', (req, res) => {
+    const {movieTitle, description} = req.body;
+    db.query(insertMovieReview(movieTitle, description),(err, results) => {
         if(err) {
-            console.error('ERROR!', err);
-            res.send('ERROR');
+            res.send(err);
             return;
         }
-        console.log(results);
-        res.send('DONE');
+        res.send(results);
     });
 });
  

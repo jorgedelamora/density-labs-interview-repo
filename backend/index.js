@@ -1,4 +1,4 @@
-const {insertMovieReview, getMovieRewiew, getAllMovieReviews } = require('./queries');
+const { getTestTable } = require('./queries');
 const express = require('express');
 const app = express();
 const mySql = require('mysql');
@@ -16,38 +16,17 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-app.get('/api/movie-reviews/:name', (req, res) => {
-    console.log('HERE');
-    const {name} = (req.params);
-    db.query(getMovieRewiew(name),(err, results) => {
+
+app.get('/api/test/', (req, res) => {
+    db.query(getTestTable(),(err, results) => {
         if(err) {
-            res.send(err);
+            res.send({status: 400,  err});
             return;
         }
-        res.send(results);
+        res.send({status: 200,  results});
     });
 });
 
-app.get('/api/movie-reviews/', (req, res) => {
-    db.query(getAllMovieReviews(),(err, results) => {
-        if(err) {
-            res.send(err);
-            return;
-        }
-        res.send(results);
-    });
-});
-
-app.post('/api/movie-reviews', (req, res) => {
-    const {movieTitle, description} = req.body;
-    db.query(insertMovieReview(movieTitle, description),(err, results) => {
-        if(err) {
-            res.send(err);
-            return;
-        }
-        res.send(results);
-    });
-});
  
 app.listen(8080, () => {
     console.log('listening on port 8080');

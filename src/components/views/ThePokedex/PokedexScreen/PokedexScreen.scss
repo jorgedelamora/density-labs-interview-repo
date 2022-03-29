@@ -1,0 +1,23 @@
+.pokedex-screen {
+    width: 100%;
+    max-width: 45rem;
+    border-radius: 10px;
+    padding: 0 40px 0 20px;
+    background-color: #9afcea;
+    height: 25rem;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    .image-display{
+        position: absolute;
+        left: 0;
+        width: 40%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .list-display {
+        width: 60%;
+    }
+}

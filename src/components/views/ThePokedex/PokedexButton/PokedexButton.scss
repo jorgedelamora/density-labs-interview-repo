@@ -1,0 +1,19 @@
+.pokedex-button {
+    width: 8rem;
+    max-width: 200px;
+    background-color: #6b0e0e;
+    border-color: #6b0e0e;
+    margin: 4px;
+    padding: 4px;
+    border-radius: 5px;
+    h3 {
+        color: #fff;
+        margin-bottom: 0;
+    }
+    cursor: pointer;
+}
+.disabled{
+    background-color: #dd2525;
+    border-color: #dd2525;
+    cursor: not-allowed;
+}

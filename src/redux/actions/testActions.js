@@ -1,8 +1,8 @@
-import { TEST } from "../constants"
+import { SAVE_POKEMONS } from "../constants"
 
-export const testActionChangePayload = (payload) => {
+export const savePokemons = (payload) => {
     return {
-        type: TEST,
+        type: SAVE_POKEMONS,
         payload
     }
 }

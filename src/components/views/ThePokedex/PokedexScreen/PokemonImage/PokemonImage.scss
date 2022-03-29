@@ -1,0 +1,11 @@
+.pokemon-image-container{
+    width: 8rem;
+    max-width: 150px;
+    height: 10rem;
+    max-height: 150px;
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}

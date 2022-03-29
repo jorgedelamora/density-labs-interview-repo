@@ -1,0 +1,20 @@
+.pokemon-list-item-container{
+    display: flex;
+    border: 1px solid #02646b;
+    background:#15abb6;
+    margin: 10px 2px;
+    padding: 2px;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    h4 {
+        color: #fff !important;
+        margin-bottom: 0;
+    }
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    &:hover {
+        border: 1px solid #FFF;
+    background:#02646b;
+    }
+}

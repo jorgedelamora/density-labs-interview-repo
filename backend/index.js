@@ -8,7 +8,7 @@ const cors = require('cors');
 const db = mySql.createPool({
     host: 'localhost',
     user: 'root',
-    password: 'test1234',
+    password: 'add-password',
     database: 'density_labs_db'
 });
 

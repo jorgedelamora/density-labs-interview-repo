@@ -11,8 +11,11 @@
         margin-bottom: 0;
     }
     cursor: pointer;
+    @media screen and (max-width: 600px) {
+        width:6rem;
+    }
 }
-.disabled{
+.disabled {
     background-color: #dd2525;
     border-color: #dd2525;
     cursor: not-allowed;

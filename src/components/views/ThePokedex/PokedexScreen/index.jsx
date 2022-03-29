@@ -27,7 +27,7 @@ const viewPokemon = async (e, pokemonName) => {
     try {
         const fetchedPokemon = await fetchPokemonDetails(pokemonName);
         setSelectedPokemon(fetchedPokemon);
-        selectDesiredView(e.detail, fetchedPokemon.sprites.front_shiny);
+        selectDesiredView(e.detail, fetchedPokemon.sprites.front_default);
     } catch (error) {
         console.error(error);
     }

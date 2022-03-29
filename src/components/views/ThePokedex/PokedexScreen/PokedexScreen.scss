@@ -20,4 +20,10 @@
     .list-display {
         width: 60%;
     }
+    @media screen and (max-width: 600px) {
+        padding:  0 10px 0 5px;
+        .list-display {
+            width: 40%;
+        }
+    }
 }
